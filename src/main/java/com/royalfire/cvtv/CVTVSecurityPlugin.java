@@ -1,13 +1,13 @@
-package com.royalfire.camera;
+package com.royalfire.cvtv;
 
-import com.royalfire.camera.commands.CameraCommand;
-import com.royalfire.camera.listeners.CameraListener;
-import com.royalfire.camera.managers.CameraManager;
-import com.royalfire.camera.managers.SessionManager;
-import com.royalfire.camera.managers.GuiManager;
+import com.royalfire.cvtv.commands.CameraCommand;
+import com.royalfire.cvtv.listeners.CameraListener;
+import com.royalfire.cvtv.managers.CameraManager;
+import com.royalfire.cvtv.managers.SessionManager;
+import com.royalfire.cvtv.managers.GuiManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class SecurityCameraPlugin extends JavaPlugin {
+public class CVTVSecurityPlugin extends JavaPlugin {
 
     private CameraManager cameraManager;
     private SessionManager sessionManager;
@@ -23,7 +23,7 @@ public class SecurityCameraPlugin extends JavaPlugin {
         getCommand("cvtv").setTabCompleter(new CameraCommand(this));
         getServer().getPluginManager().registerEvents(new CameraListener(this), this);
 
-        getLogger().info("SecurityCamera plugin enabled!");
+        getLogger().info("CVTVSecurity plugin enabled!");
     }
 
     @Override
@@ -34,7 +34,7 @@ public class SecurityCameraPlugin extends JavaPlugin {
         if (cameraManager != null) {
             cameraManager.saveData();
         }
-        getLogger().info("SecurityCamera plugin disabled!");
+        getLogger().info("CVTVSecurity plugin disabled!");
     }
 
     public CameraManager getCameraManager() {

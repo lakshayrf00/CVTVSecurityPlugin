@@ -1,10 +1,10 @@
-package com.royalfire.camera.managers;
+package com.royalfire.cvtv.managers;
 
-import com.royalfire.camera.SecurityCameraPlugin;
-import com.royalfire.camera.models.CameraData;
-import com.royalfire.camera.models.ComputerData;
-import com.royalfire.camera.models.GroupData;
-import com.royalfire.camera.utils.ItemUtils;
+import com.royalfire.cvtv.CVTVSecurityPlugin;
+import com.royalfire.cvtv.models.CameraData;
+import com.royalfire.cvtv.models.ComputerData;
+import com.royalfire.cvtv.models.GroupData;
+import com.royalfire.cvtv.utils.ItemUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -20,9 +20,9 @@ import java.util.List;
 
 public class GuiManager {
 
-    private final SecurityCameraPlugin plugin;
+    private final CVTVSecurityPlugin plugin;
 
-    public GuiManager(SecurityCameraPlugin plugin) {
+    public GuiManager(CVTVSecurityPlugin plugin) {
         this.plugin = plugin;
     }
 

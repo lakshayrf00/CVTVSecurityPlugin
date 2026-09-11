@@ -1,8 +1,8 @@
-package com.royalfire.camera.managers;
+package com.royalfire.cvtv.managers;
 
-import com.royalfire.camera.SecurityCameraPlugin;
-import com.royalfire.camera.models.CameraData;
-import com.royalfire.camera.utils.ItemUtils;
+import com.royalfire.cvtv.CVTVSecurityPlugin;
+import com.royalfire.cvtv.models.CameraData;
+import com.royalfire.cvtv.utils.ItemUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.GameMode;
@@ -26,12 +26,12 @@ import java.util.Map;
 import java.util.UUID;
 
 public class SessionManager {
-    private final SecurityCameraPlugin plugin;
+    private final CVTVSecurityPlugin plugin;
     
     private final Map<UUID, CameraSession> activeSessions = new HashMap<>();
     private BukkitTask updateTask;
 
-    public SessionManager(SecurityCameraPlugin plugin) {
+    public SessionManager(CVTVSecurityPlugin plugin) {
         this.plugin = plugin;
         startTask();
     }
@@ -87,12 +87,12 @@ public class SessionManager {
         private final GameMode originalGameMode;
         private final ItemStack[] originalInventory;
         private final CameraData camera;
-        private final SecurityCameraPlugin plugin;
+        private final CVTVSecurityPlugin plugin;
         
         private ArmorStand visualStand;
         private ArmorStand seatStand;
 
-        public CameraSession(Player player, CameraData camera, SecurityCameraPlugin plugin) {
+        public CameraSession(Player player, CameraData camera, CVTVSecurityPlugin plugin) {
             this.playerId = player.getUniqueId();
             this.originalLoc = player.getLocation().clone();
             this.originalGameMode = player.getGameMode();

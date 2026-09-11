@@ -1,9 +1,9 @@
-package com.royalfire.camera.managers;
+package com.royalfire.cvtv.managers;
 
-import com.royalfire.camera.SecurityCameraPlugin;
-import com.royalfire.camera.models.CameraData;
-import com.royalfire.camera.models.ComputerData;
-import com.royalfire.camera.models.GroupData;
+import com.royalfire.cvtv.CVTVSecurityPlugin;
+import com.royalfire.cvtv.models.CameraData;
+import com.royalfire.cvtv.models.ComputerData;
+import com.royalfire.cvtv.models.GroupData;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.UUID;
 
 public class CameraManager {
-    private final SecurityCameraPlugin plugin;
+    private final CVTVSecurityPlugin plugin;
     private final File dataFile;
     private FileConfiguration dataConfig;
 
@@ -27,7 +27,7 @@ public class CameraManager {
     private int nextCameraId = 1;
     private int nextComputerId = 1;
 
-    public CameraManager(SecurityCameraPlugin plugin) {
+    public CameraManager(CVTVSecurityPlugin plugin) {
         this.plugin = plugin;
         this.dataFile = new File(plugin.getDataFolder(), "data.yml");
         loadData();

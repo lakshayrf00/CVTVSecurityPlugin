@@ -1,11 +1,11 @@
-package com.royalfire.camera.commands;
+package com.royalfire.cvtv.commands;
 
-import com.royalfire.camera.SecurityCameraPlugin;
-import com.royalfire.camera.managers.CameraManager;
-import com.royalfire.camera.models.CameraData;
-import com.royalfire.camera.models.ComputerData;
-import com.royalfire.camera.models.GroupData;
-import com.royalfire.camera.utils.ItemUtils;
+import com.royalfire.cvtv.CVTVSecurityPlugin;
+import com.royalfire.cvtv.managers.CameraManager;
+import com.royalfire.cvtv.models.CameraData;
+import com.royalfire.cvtv.models.ComputerData;
+import com.royalfire.cvtv.models.GroupData;
+import com.royalfire.cvtv.utils.ItemUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,10 +18,10 @@ import java.util.List;
 
 public class CameraCommand implements CommandExecutor, TabCompleter {
 
-    private final SecurityCameraPlugin plugin;
+    private final CVTVSecurityPlugin plugin;
     private final CameraManager cameraManager;
 
-    public CameraCommand(SecurityCameraPlugin plugin) {
+    public CameraCommand(CVTVSecurityPlugin plugin) {
         this.plugin = plugin;
         this.cameraManager = plugin.getCameraManager();
     }

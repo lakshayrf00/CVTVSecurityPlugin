@@ -1,4 +1,4 @@
-package com.royalfire.camera.models;
+package com.royalfire.cvtv.models;
 
 import org.bukkit.Location;
 import java.util.UUID;

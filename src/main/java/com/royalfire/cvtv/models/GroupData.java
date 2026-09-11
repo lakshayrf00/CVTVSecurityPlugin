@@ -1,4 +1,4 @@
-package com.royalfire.camera.models;
+package com.royalfire.cvtv.models;
 
 import java.util.ArrayList;
 import java.util.List;

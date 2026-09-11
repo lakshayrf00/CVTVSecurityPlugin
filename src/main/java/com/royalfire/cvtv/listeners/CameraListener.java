@@ -1,12 +1,12 @@
-package com.royalfire.camera.listeners;
+package com.royalfire.cvtv.listeners;
 
-import com.royalfire.camera.SecurityCameraPlugin;
-import com.royalfire.camera.managers.CameraManager;
-import com.royalfire.camera.managers.SessionManager;
-import com.royalfire.camera.models.CameraData;
-import com.royalfire.camera.models.ComputerData;
-import com.royalfire.camera.models.GroupData;
-import com.royalfire.camera.utils.ItemUtils;
+import com.royalfire.cvtv.CVTVSecurityPlugin;
+import com.royalfire.cvtv.managers.CameraManager;
+import com.royalfire.cvtv.managers.SessionManager;
+import com.royalfire.cvtv.models.CameraData;
+import com.royalfire.cvtv.models.ComputerData;
+import com.royalfire.cvtv.models.GroupData;
+import com.royalfire.cvtv.utils.ItemUtils;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
@@ -31,11 +31,11 @@ import org.bukkit.persistence.PersistentDataType;
 
 public class CameraListener implements Listener {
 
-    private final SecurityCameraPlugin plugin;
+    private final CVTVSecurityPlugin plugin;
     private final CameraManager cameraManager;
     private final SessionManager sessionManager;
 
-    public CameraListener(SecurityCameraPlugin plugin) {
+    public CameraListener(CVTVSecurityPlugin plugin) {
         this.plugin = plugin;
         this.cameraManager = plugin.getCameraManager();
         this.sessionManager = plugin.getSessionManager();
@@ -112,7 +112,7 @@ public class CameraListener implements Listener {
                     org.bukkit.entity.ArmorStand camEntity = (org.bukkit.entity.ArmorStand) loc.getWorld().spawnEntity(spawnLoc, org.bukkit.entity.EntityType.ARMOR_STAND);
                     camEntity.setVisible(false);
                     camEntity.setGravity(false);
-                    camEntity.getEquipment().setHelmet(com.royalfire.camera.utils.ItemUtils.getCctvItem(plugin, is360));
+                    camEntity.getEquipment().setHelmet(com.royalfire.cvtv.utils.ItemUtils.getCctvItem(plugin, is360));
                     camEntity.getPersistentDataContainer().set(cctvKey, PersistentDataType.BYTE, (byte) 1);
                     
                     CameraData cam = cameraManager.addCamera(loc, event.getPlayer().getUniqueId(), is360, yaw);

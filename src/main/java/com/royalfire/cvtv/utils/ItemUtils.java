@@ -1,4 +1,4 @@
-package com.royalfire.camera.utils;
+package com.royalfire.cvtv.utils;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

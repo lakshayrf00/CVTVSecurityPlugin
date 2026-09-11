@@ -1,1 +1,1 @@
-rootProject.name = "SecurityCameraPlugin"
+rootProject.name = "CVTVSecurityPlugin"
