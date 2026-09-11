@@ -17,30 +17,30 @@ import java.util.UUID;
 
 public class ItemUtils {
 
-    public static final String CCTV_TEXTURE_BASE64 = "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmE2ZTU5NzIzN2YyMjA5MjY4Y2RiOWRiZTM2ZTZmNjMzNjA2NjJjNTk1ZTZiYWUwYzJhNjRkZTBkYzI0NDMzOSJ9fX0=";
-    public static final UUID CCTV_UUID = UUID.fromString("11111111-2222-3333-4444-555555555555");
+    public static final String CVTV_TEXTURE_BASE64 = "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmE2ZTU5NzIzN2YyMjA5MjY4Y2RiOWRiZTM2ZTZmNjMzNjA2NjJjNTk1ZTZiYWUwYzJhNjRkZTBkYzI0NDMzOSJ9fX0=";
+    public static final UUID CVTV_UUID = UUID.fromString("11111111-2222-3333-4444-555555555555");
 
     public static ItemStack getCctvItem(Plugin plugin, boolean is360) {
         ItemStack item = new ItemStack(Material.PLAYER_HEAD);
         SkullMeta meta = (SkullMeta) item.getItemMeta();
         if (meta != null) {
             String typeStr = is360 ? "360°" : "180°";
-            meta.setDisplayName(ChatColor.DARK_GRAY + "CCTV Camera (" + typeStr + ")");
+            meta.setDisplayName(ChatColor.DARK_GRAY + "CVTV Camera (" + typeStr + ")");
             List<String> lore = new ArrayList<>();
             lore.add(ChatColor.GRAY + "Place this to set up a camera.");
             lore.add(ChatColor.YELLOW + "Type: " + ChatColor.AQUA + typeStr);
             meta.setLore(lore);
 
             // Paper API method with random UUID to defeat client-side caching of broken skins
-            com.destroystokyo.paper.profile.PlayerProfile profile = Bukkit.createProfile(UUID.randomUUID(), "CCTV");
-            profile.setProperty(new com.destroystokyo.paper.profile.ProfileProperty("textures", CCTV_TEXTURE_BASE64));
+            com.destroystokyo.paper.profile.PlayerProfile profile = Bukkit.createProfile(UUID.randomUUID(), "CVTV");
+            profile.setProperty(new com.destroystokyo.paper.profile.ProfileProperty("textures", CVTV_TEXTURE_BASE64));
             meta.setPlayerProfile(profile);
 
             // Mark as custom item
-            NamespacedKey key = new NamespacedKey(plugin, "is_cctv");
+            NamespacedKey key = new NamespacedKey(plugin, "is_cvtv");
             meta.getPersistentDataContainer().set(key, PersistentDataType.BYTE, (byte) 1);
             
-            NamespacedKey typeKey = new NamespacedKey(plugin, "cctv_type");
+            NamespacedKey typeKey = new NamespacedKey(plugin, "cvtv_type");
             meta.getPersistentDataContainer().set(typeKey, PersistentDataType.STRING, is360 ? "360" : "180");
 
             item.setItemMeta(meta);

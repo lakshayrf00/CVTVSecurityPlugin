@@ -19,8 +19,8 @@ public class SecurityCameraPlugin extends JavaPlugin {
         sessionManager = new SessionManager(this);
         guiManager = new GuiManager(this);
 
-        getCommand("cctv").setExecutor(new CameraCommand(this));
-        getCommand("cctv").setTabCompleter(new CameraCommand(this));
+        getCommand("cvtv").setExecutor(new CameraCommand(this));
+        getCommand("cvtv").setTabCompleter(new CameraCommand(this));
         getServer().getPluginManager().registerEvents(new CameraListener(this), this);
 
         getLogger().info("SecurityCamera plugin enabled!");

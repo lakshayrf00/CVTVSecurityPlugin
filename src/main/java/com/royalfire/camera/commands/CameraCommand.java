@@ -45,15 +45,15 @@ public class CameraCommand implements CommandExecutor, TabCompleter {
                     return true;
                 }
                 if (args.length < 2) {
-                    player.sendMessage(ChatColor.RED + "Usage: /cctv get <cctv180|cctv360|computer>");
+                    player.sendMessage(ChatColor.RED + "Usage: /cvtv get <cvtv180|cvtv360|computer>");
                     return true;
                 }
-                if (args[1].equalsIgnoreCase("cctv180")) {
+                if (args[1].equalsIgnoreCase("cvtv180")) {
                     player.getInventory().addItem(ItemUtils.getCctvItem(plugin, false));
-                    player.sendMessage(ChatColor.GREEN + "You received a 180° CCTV Camera!");
-                } else if (args[1].equalsIgnoreCase("cctv360") || args[1].equalsIgnoreCase("cctv")) {
+                    player.sendMessage(ChatColor.GREEN + "You received a 180° CVTV Camera!");
+                } else if (args[1].equalsIgnoreCase("cvtv360") || args[1].equalsIgnoreCase("cvtv")) {
                     player.getInventory().addItem(ItemUtils.getCctvItem(plugin, true));
-                    player.sendMessage(ChatColor.GREEN + "You received a 360° CCTV Camera!");
+                    player.sendMessage(ChatColor.GREEN + "You received a 360° CVTV Camera!");
                 } else if (args[1].equalsIgnoreCase("computer")) {
                     player.getInventory().addItem(ItemUtils.getComputerItem(plugin, null));
                     player.sendMessage(ChatColor.GREEN + "You received a Computer!");
@@ -62,7 +62,7 @@ public class CameraCommand implements CommandExecutor, TabCompleter {
 
             case "group":
                 if (args.length < 3) {
-                    player.sendMessage(ChatColor.RED + "Usage: /cctv group <create|add|remove> <name> [cameraId]");
+                    player.sendMessage(ChatColor.RED + "Usage: /cvtv group <create|add|remove> <name> [cameraId]");
                     return true;
                 }
                 String sub = args[1].toLowerCase();
@@ -90,7 +90,7 @@ public class CameraCommand implements CommandExecutor, TabCompleter {
                     player.sendMessage(ChatColor.GREEN + "Group '" + groupName + "' created.");
                 } else if (sub.equals("add")) {
                     if (args.length < 4) {
-                        player.sendMessage(ChatColor.RED + "Usage: /cctv group add <name> <cameraId>");
+                        player.sendMessage(ChatColor.RED + "Usage: /cvtv group add <name> <cameraId>");
                         return true;
                     }
                     String camId = args[3];
@@ -122,7 +122,7 @@ public class CameraCommand implements CommandExecutor, TabCompleter {
                     player.sendMessage(ChatColor.GREEN + "Camera " + camId + " added to group " + group.getName() + ".");
                 } else if (sub.equals("remove")) {
                     if (args.length < 4) {
-                        player.sendMessage(ChatColor.RED + "Usage: /cctv group remove <name> <cameraId>");
+                        player.sendMessage(ChatColor.RED + "Usage: /cvtv group remove <name> <cameraId>");
                         return true;
                     }
                     String camId = args[3];
@@ -214,15 +214,15 @@ public class CameraCommand implements CommandExecutor, TabCompleter {
 
     private void sendHelp(Player player) {
         player.sendMessage(ChatColor.AQUA + "=== Security Camera ===");
-        player.sendMessage(ChatColor.YELLOW + "/cctv get cctv180|cctv360" + ChatColor.GRAY + " - Get a CCTV camera");
-        player.sendMessage(ChatColor.YELLOW + "/cctv get computer" + ChatColor.GRAY + " - Get a computer");
-        player.sendMessage(ChatColor.YELLOW + "/cctv group create <name>");
-        player.sendMessage(ChatColor.YELLOW + "/cctv group delete <name>");
-        player.sendMessage(ChatColor.YELLOW + "/cctv group add <name> <cameraId>");
-        player.sendMessage(ChatColor.YELLOW + "/cctv group remove <name> <cameraId>");
+        player.sendMessage(ChatColor.YELLOW + "/cvtv get cvtv180|cvtv360" + ChatColor.GRAY + " - Get a CVTV camera");
+        player.sendMessage(ChatColor.YELLOW + "/cvtv get computer" + ChatColor.GRAY + " - Get a computer");
+        player.sendMessage(ChatColor.YELLOW + "/cvtv group create <name>");
+        player.sendMessage(ChatColor.YELLOW + "/cvtv group delete <name>");
+        player.sendMessage(ChatColor.YELLOW + "/cvtv group add <name> <cameraId>");
+        player.sendMessage(ChatColor.YELLOW + "/cvtv group remove <name> <cameraId>");
         if (player.hasPermission("camera.admin")) {
-            player.sendMessage(ChatColor.YELLOW + "/cctv gui" + ChatColor.GRAY + " - Open Admin GUI");
-            player.sendMessage(ChatColor.YELLOW + "/cctv list" + ChatColor.GRAY + " - List all cameras");
+            player.sendMessage(ChatColor.YELLOW + "/cvtv gui" + ChatColor.GRAY + " - Open Admin GUI");
+            player.sendMessage(ChatColor.YELLOW + "/cvtv list" + ChatColor.GRAY + " - List all cameras");
         }
     }
 
@@ -239,8 +239,8 @@ public class CameraCommand implements CommandExecutor, TabCompleter {
             }
         } else if (args.length == 2) {
             if (args[0].equalsIgnoreCase("get")) {
-                completions.add("cctv180");
-                completions.add("cctv360");
+                completions.add("cvtv180");
+                completions.add("cvtv360");
                 completions.add("computer");
             } else if (args[0].equalsIgnoreCase("group")) {
                 completions.add("create");

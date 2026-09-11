@@ -61,7 +61,7 @@ public class CameraListener implements Listener {
             }
         }
         
-        NamespacedKey cctvKey = new NamespacedKey(plugin, "is_cctv");
+        NamespacedKey cctvKey = new NamespacedKey(plugin, "is_cvtv");
         if (meta.getPersistentDataContainer().has(cctvKey, PersistentDataType.BYTE)) {
             event.setCancelled(true);
         }
@@ -72,7 +72,7 @@ public class CameraListener implements Listener {
         if (event.getAction() == Action.RIGHT_CLICK_BLOCK && event.getClickedBlock() != null) {
             ItemStack item = event.getItem();
             if (item != null && item.hasItemMeta()) {
-                NamespacedKey cctvKey = new NamespacedKey(plugin, "is_cctv");
+                NamespacedKey cctvKey = new NamespacedKey(plugin, "is_cvtv");
                 if (item.getItemMeta().getPersistentDataContainer().has(cctvKey, PersistentDataType.BYTE)) {
                     event.setCancelled(true);
                     
@@ -104,8 +104,8 @@ public class CameraListener implements Listener {
                     spawnLoc.setYaw(yaw);
                     
                     boolean is360 = true;
-                    if (item.getItemMeta().getPersistentDataContainer().has(new NamespacedKey(plugin, "cctv_type"), PersistentDataType.STRING)) {
-                        String typeStr = item.getItemMeta().getPersistentDataContainer().get(new NamespacedKey(plugin, "cctv_type"), PersistentDataType.STRING);
+                    if (item.getItemMeta().getPersistentDataContainer().has(new NamespacedKey(plugin, "cvtv_type"), PersistentDataType.STRING)) {
+                        String typeStr = item.getItemMeta().getPersistentDataContainer().get(new NamespacedKey(plugin, "cvtv_type"), PersistentDataType.STRING);
                         is360 = "360".equals(typeStr);
                     }
                     
@@ -146,7 +146,7 @@ public class CameraListener implements Listener {
     @EventHandler
     public void onEntityDamage(org.bukkit.event.entity.EntityDamageByEntityEvent event) {
         if (event.getEntity() instanceof org.bukkit.entity.ArmorStand stand) {
-            if (stand.getPersistentDataContainer().has(new NamespacedKey(plugin, "is_cctv"), PersistentDataType.BYTE)) {
+            if (stand.getPersistentDataContainer().has(new NamespacedKey(plugin, "is_cvtv"), PersistentDataType.BYTE)) {
                 event.setCancelled(true); // Always cancel to prevent breaking by non-players or dropping armor stand item
                 
                 if (event.getDamager() instanceof Player player) {
@@ -207,7 +207,7 @@ public class CameraListener implements Listener {
     @EventHandler
     public void onArmorStandInteract(org.bukkit.event.player.PlayerInteractAtEntityEvent event) {
         if (event.getRightClicked() instanceof org.bukkit.entity.ArmorStand stand) {
-            if (stand.getPersistentDataContainer().has(new NamespacedKey(plugin, "is_cctv"), PersistentDataType.BYTE)) {
+            if (stand.getPersistentDataContainer().has(new NamespacedKey(plugin, "is_cvtv"), PersistentDataType.BYTE)) {
                 event.setCancelled(true); // Prevent stealing the camera head
             }
         }

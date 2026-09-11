@@ -1,10 +1,10 @@
-# CBTB Security Plugin
+# CVTV Security Plugin
 
-A highly advanced and optimized Security Camera and CCTV management plugin for Minecraft servers (Paper/Spigot 1.20+). Built professionally to allow players to monitor their bases with highly configurable 180° and 360° cameras, interactive computer terminals, and a secure group-based permission system.
+A highly advanced and optimized Security Camera and CVTV management plugin for Minecraft servers (Paper/Spigot 1.20+). Built professionally to allow players to monitor their bases with highly configurable 180° and 360° cameras, interactive computer terminals, and a secure group-based permission system.
 
 ## 🌟 Features
 
-*   **Real-time CCTV Viewing:** Players can seamlessly view through physical cameras placed in the world.
+*   **Real-time CVTV Viewing:** Players can seamlessly view through physical cameras placed in the world.
 *   **Dual Camera Types:** 
     *   **180° Cameras:** Restricted field of view. The camera head physically turns and the player's view is hard-clamped to prevent looking behind.
     *   **360° Cameras:** Full freedom of rotation to survey the entire surrounding area.
@@ -19,20 +19,20 @@ A highly advanced and optimized Security Camera and CCTV management plugin for M
 
 ## 📥 Commands & Permissions
 
-*   `/cctv get cctv180` - Get a 180-degree camera.
-*   `/cctv get cctv360` - Get a 360-degree camera.
-*   `/cctv get computer` - Get a computer terminal.
-*   `/cctv group create <name>` - Create a new camera group.
-*   `/cctv group add <name> <cameraId>` - Add a camera to a group.
-*   `/cctv group remove <name> <cameraId>` - Remove a camera from a group.
-*   `/cctv admin` - Open the server-wide Admin management GUI.
+*   `/cvtv get cvtv180` - Get a 180-degree camera.
+*   `/cvtv get cvtv360` - Get a 360-degree camera.
+*   `/cvtv get computer` - Get a computer terminal.
+*   `/cvtv group create <name>` - Create a new camera group.
+*   `/cvtv group add <name> <cameraId>` - Add a camera to a group.
+*   `/cvtv group remove <name> <cameraId>` - Remove a camera from a group.
+*   `/cvtv admin` - Open the server-wide Admin management GUI.
 
 **Permissions:**
 *   `camera.admin` - Bypass all limits, destroy any camera/computer, access the admin GUI, and spawn items.
 
 ## ⚙️ Installation
 
-1. Download the latest `CBTBSecurityPlugin.jar` release.
+1. Download the latest `CVTVSecurityPlugin.jar` release.
 2. Place it into your server's `plugins/` directory.
 3. Restart your server.
 4. Provide `camera.admin` permission to administrators.
@@ -42,8 +42,8 @@ A highly advanced and optimized Security Camera and CCTV management plugin for M
 This project uses Gradle. To build the plugin yourself:
 
 ```bash
-git clone https://github.com/yourusername/CBTBSecurityPlugin.git
-cd CBTBSecurityPlugin
+git clone https://github.com/yourusername/CVTVSecurityPlugin.git
+cd CVTVSecurityPlugin
 gradle clean build
 ```
 The compiled jar will be located in `build/libs/`.

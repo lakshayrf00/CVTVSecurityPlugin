@@ -1,9 +1,9 @@
-name: CBTBSecurity
+name: CVTVSecurity
 version: 1.0
 main: com.royalfire.camera.SecurityCameraPlugin
 api-version: '1.20'
 commands:
-  cctv:
+  cvtv:
     description: Main CCTV command
-    usage: /cctv <args>
+    usage: /cvtv <args>
     aliases: [camera]

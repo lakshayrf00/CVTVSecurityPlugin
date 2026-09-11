@@ -109,7 +109,7 @@ public class SessionManager {
             
             // Find existing visualStand
             for (org.bukkit.entity.Entity entity : camLoc.getWorld().getNearbyEntities(camLoc, 1, 2, 1)) {
-                if (entity instanceof ArmorStand stand && stand.getPersistentDataContainer().has(new org.bukkit.NamespacedKey(plugin, "is_cctv"), org.bukkit.persistence.PersistentDataType.BYTE)) {
+                if (entity instanceof ArmorStand stand && stand.getPersistentDataContainer().has(new org.bukkit.NamespacedKey(plugin, "is_cvtv"), org.bukkit.persistence.PersistentDataType.BYTE)) {
                     visualStand = stand;
                     break;
                 }
